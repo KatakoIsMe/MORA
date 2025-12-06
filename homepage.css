@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    padding: 30px 30px; /* Diperbaiki */
+}
+
+.banner img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* HEADER BAR di atas banner */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px; /* sesuai kebutuhan */
+  background-color: white; /* atau warna lain sesuai tema */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Search input + button */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search-btn {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: #4f6fad;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+/* Icon-area (notif + user) */
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.top-icons .icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.main-content {
+    margin-left: 110px;
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    color: #7d7d7d;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.category-btn {
+    padding: 18px 30px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Colors */
+.anxiety { background: #6f6f6f; }
+.npd { background: #414b6a; }
+.depression { background: #a33a3a; }
+.ocd { background: #6d7b8d; }
+.ptsd { background: #4f6fad; }
+.bpd { background: #2a7252; }
+.skizo { background: #998329; }
+.ed { background: #8e4a6c; }
+
+.test-button {
+    background: #d9e1eb;
+    padding: 18px;
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.section-title {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.doctors {
+    display: flex;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.doctor-card {
+    background: white;
+    width: 220px;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.doctor-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.book-btn {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background: #d9e1eb;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Tambahan untuk geser konten dari sidebar */
+.main-content {
+    margin-left: 110px;
+}

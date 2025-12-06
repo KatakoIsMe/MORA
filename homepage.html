@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Mental Health</title>
+
+    <!-- HUBUNGKAN CSS -->
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" style="
+    width: 80px;
+    height: 100vh;
+    background: #b9cbe0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+">
+    <div class="sidebar-item logo" style="margin-bottom: 40px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" style="width:55px;">
+    </div>
+
+    <div class="sidebar-menu" style="display:flex; flex-direction:column; gap:30px;">
+        <div class="sidebar-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" style="width:38px; cursor:pointer;">
+        </div>
+        <div class="sidebar-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/1827/1827933.png" style="width:38px; cursor:pointer;">
+        </div>
+        <div class="sidebar-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/2099/2099058.png" style="width:38px; cursor:pointer;">
+        </div>
+    </div>
+</div>
+
+
+<!-- WRAPPER -->
+<div class="main-content">
+
+    <!-- HEADER -->
+    <div class="top-bar">
+        <div class="search-wrapper">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-btn">🔍</button>
+        </div>
+        <div class="top-icons">
+            <img src="icon-notif.png" alt="Notifications" class="icon notif-icon">
+            <img src="user-avatar.png" alt="User" class="icon user-icon">
+        </div>
+    </div>
+
+    <!-- BANNER -->
+    <div class="banner">
+        <img src="icon/banner.png" alt="banner">
+    </div>
+
+    <!-- CATEGORY HEADER -->
+    <div class="categories-header">
+        <span><b>CATEGORIES</b></span>
+        <span id="toggleBtn" class="toggle-btn"><b>SEE ALL</b></span>
+    </div>
+
+    <!-- CATEGORY LIST -->
+    <div class="categories" id="categoryList">
+    </div>
+
+    <!-- TEST BUTTON -->
+    <div id="survey-btn" class="test-button" onclick="handleSurveyClick()">
+        TEMPORARY MENTAL ILLNESS TEST
+    </div>
+
+    <!-- DOCTOR LIST -->
+    <div class="section-title">POPULAR DOCTORS</div>
+
+    <div class="doctors">
+        <div class="doctor-card">
+            <img src="https://i.ibb.co/8z1FbkC/doc1.jpg">
+            <p><b>dr. Anindya Rahmasari</b><br>Pengalaman > 15 tahun</p>
+            <button class="book-btn">BOOK</button>
+        </div>
+
+        <div class="doctor-card">
+            <img src="https://i.ibb.co/kD3g1f9/doc2.jpg">
+            <p><b>dr. Reza Alvaro</b><br>Pengalaman > 20 tahun</p>
+            <button class="book-btn">BOOK</button>
+        </div>
+
+        <div class="doctor-card">
+            <img src="https://i.ibb.co/gS6LSPR/doc3.jpg">
+            <p><b>dr. Nathania Wijaya</b><br>Pengalaman > 30 tahun</p>
+            <button class="book-btn">BOOK</button>
+        </div>
+    </div>
+
+</div> <!-- END MAIN CONTENT -->
+
+<!-- HUBUNGKAN JS -->
+<script src="homepage.js"></script>
+<script src="survey.js"></script> <!-- penting supaya tombol test bekerja -->
+
+</body>
+</html>
