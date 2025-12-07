@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="layout-wrapper">
+
+        <main class="main-content">
+            
+            <div class="content-card top-card">
+                <div class="split-layout">
+                    
+                    <div class="bio-panel">
+                        <div class="profile-picture-wrapper">
+                            <img src="/home/katako/OneDrive/Documents/Work/Tugas kuliah tentu saja/Semester 3/Manajemen Proyek/settings-page/image/default_pfp.png" alt="Profile" class="profile-picture" id="profile-img">
+                        </div>
+                        
+                        <div class="bio-inputs">
+                            <div class="info-item vertical">
+                                <label for="name">NAME :</label>
+                                <input type="text" id="name" value="Aleph">
+                            </div>
+
+                            <div class="row-inputs">
+                                <div class="info-item vertical age-group">
+                                    <label for="age">AGE :</label>
+                                    <input type="number" id="age" value="25">
+                                </div>
+
+                                <div class="info-item vertical gender-group">
+                                    <label>GENDER :</label>
+                                    <div class="gender-options">
+                                        <div class="gender-icon" onclick="setGender('male', this)">
+                                            <i class="fa-solid fa-mars"></i>
+                                        </div>
+                                        <div class="gender-icon" onclick="setGender('female', this)">
+                                            <i class="fa-solid fa-venus"></i>
+                                        </div>
+                                        <div class="gender-icon" onclick="setGender('other', this)">
+                                            <i class="fa-solid fa-genderless"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-item vertical bio-group">
+                                <label for="bio">BIO :</label>
+                                <textarea id="bio" placeholder="Describe yourself..."></textarea>
+                            </div>
+                            <button class="save-btn bio-save-btn" onclick="buttonClick('Bio Saved!')">SAVE</button>
+                        </div>
+                    </div>
+
+                    <div class="details-panel">
+                        <h2 class="section-title">ACCOUNT</h2> 
+                        <div class="form-grid">
+                            <div class="info-item">
+                                <label>EMAIL :</label>
+                                <input type="email" value="Alephcantik@gmail.com">
+                            </div>
+                            <div class="info-item">
+                                <label>NO TELP :</label>
+                                <input type="tel" value="0859100000000">
+                            </div>
+                            <div class="info-item">
+                                <label>PAYMENT :</label>
+                                <div class="payment-pill" onclick="buttonClick('Change Payment Method')">
+                                    <img src="/home/katako/OneDrive/Documents/Work/Tugas kuliah tentu saja/Semester 3/Manajemen Proyek/settings-page/image/gopay_logo.png" alt="GoPay" class="payment-logo"> 
+                                    gopay
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="password-section">
+                            <h3 class="sub-title">Set new Password</h3>
+                            
+                            <div class="password-grid">
+                                <div class="password-inputs-col">
+                                    <div class="stacked-input">
+                                        <label>NEW PASSWORD :</label>
+                                        <div class="input-wrapper">
+                                            <input type="password" id="new-pass" placeholder="">
+                                            <i class="fa-solid fa-eye toggle-icon" onclick="togglePassword('new-pass', this)"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="stacked-input">
+                                        <label>CONFIRM PASSWORD:</label>
+                                        <div class="input-wrapper">
+                                            <input type="password" id="confirm-pass" placeholder="">
+                                            <i class="fa-solid fa-eye toggle-icon" onclick="togglePassword('confirm-pass', this)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="save-btn" onclick="buttonClick('Password Saved!')">SAVE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card bottom-card">
+                <h2 class="section-title">GENERAL SETTINGS</h2>
+                <div class="settings-row">
+                    <div class="settings-col">
+                        <div class="setting-item">
+                            <label>Language :</label>
+                            <div class="pill" onclick="buttonClick('Change Language')">English</div>
+                        </div>
+                        <div class="setting-item">
+                            <label>TIME :</label>
+                            <div class="pill" onclick="buttonClick('Change Timezone')">WIB</div>
+                        </div>
+                        <button class="logout-btn" onclick="buttonClick('Logging Out...')">LOG OUT</button>
+                    </div>
+
+                    <div class="settings-col">
+                        <div class="setting-item">
+                            <label>Mode :</label>
+                            <div class="pill" onclick="buttonClick('Toggle Dark Mode')">Light</div>
+                        </div>
+                        <div class="setting-item">
+                            <label>Notification :</label>
+                            <div class="pill" onclick="buttonClick('Toggle Notifications')">on</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // --- Dummy Click Function ---
+        function buttonClick(message) {
+            alert(message); // Simple popup to show it works
+            console.log("Clicked:", message);
+        }
+
+        // --- Existing Password Logic ---
+        function togglePassword(inputId, iconElement) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text";
+                iconElement.classList.remove('fa-eye');
+                iconElement.classList.add('fa-eye-slash');
+            } else {
+                input.type = "password";
+                iconElement.classList.remove('fa-eye-slash');
+                iconElement.classList.add('fa-eye');
+            }
+        }
+        
+        // --- Existing Gender Logic ---
+        function setGender(gender, element) {
+            const allIcons = document.querySelectorAll('.gender-icon');
+            allIcons.forEach(icon => icon.classList.remove('active'));
+            element.classList.add('active');
+
+            const imgElement = document.getElementById('profile-img');
+            if (gender === 'male') {
+                imgElement.src = 'https://via.placeholder.com/150/89CFF0/000000?text=Male'; 
+            } else if (gender === 'female') {
+                imgElement.src = 'https://via.placeholder.com/150/FFB6C1/000000?text=Female'; 
+            } else {
+                imgElement.src = 'https://via.placeholder.com/150/cccccc/000000?text=Other'; 
+            }
+        }
+    </script>
+</body>
+</html>
