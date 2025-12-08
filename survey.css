@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ---------------------------------------------------
+   GLOBAL / BASE
+--------------------------------------------------- */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f5f7fa;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+    gap: 170px;         /* jarak sidebar ↔ main content */
+    justify-content: flex-start;
+    margin-right: 50px;
+}
+
+/* ---------------------------------------------------
+   SIDEBAR
+--------------------------------------------------- */
+.sidebar {
+    width: 450px;
+    background: linear-gradient(to bottom, #dff1ff, #e8f4ff);
+    padding: 25px;
+}
+
+/* Profile section */
+.profile-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ---------------------------------------------------
+   STEPS (Sidebar progress indicator)
+--------------------------------------------------- */
+.steps {
+    margin-top: 30px;
+    position: relative;
+}
+
+/* Vertical connecting line */
+.steps::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 4px;
+    height: 90%;
+    background: #8b99ac;
+    z-index: 0;
+}
+
+/* Each row */
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Text beside dot */
+.step-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: -2px;
+}
+
+.step-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.step-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.3;
+}
+
+/* DOT (default = upcoming) */
+.step .dot {
+    display: none;
+}
+
+/* icon PNG baru */
+.dot-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+/* ---------------------------------------------------
+   MAIN CONTENT
+--------------------------------------------------- */
+.content {
+    padding: 60px;
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+   SELECT BOX GRID (Gender, dll)
+--------------------------------------------------- */
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 10px;
+    justify-content: center; /* biar grid tidak mepet kiri */
+    margin-top: 20px;
+}
+
+.select-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 170px;
+    height: 170px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: #f4f8ff;
+    border: 2px solid #000000;
+    border-radius: 12px;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+    
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.select-box .opt-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 2px;
+}
+
+.select-box span {
+    font-size: 18px;
+    font-weight: 1000; 
+}
+
+/* Hover effect */
+.select-box:hover {
+    border-color: #7ba7ff;
+    background: #eef4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(123, 167, 255, 0.15);
+}
+
+.select-box:hover .opt-icon {
+    filter: drop-shadow(0 0 3px rgba(74, 123, 255, 0.5));
+}
+
+.select-box:hover span {
+    color: #2a4ebb;
+    font-weight: 600;
+}
+
+/* Selected state */
+.select-box.selected {
+    background: #dbe8ff;
+    border-color: #7fa9ff;
+}
+
+.select-box.selected .opt-icon {
+    filter: drop-shadow(0 0 3px rgba(74, 123, 255, 0.5));
+}
+
+/* ---------------------------------------------------
+   LIKERT SCALE
+--------------------------------------------------- */
+.main-header {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.likert-legend {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    margin: 6px 0 30px;
+}
+
+.likert-legend div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.likert-legend .dot {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 4px solid #ccc;
+    margin-bottom: 6px;
+}
+
+/* Samakan warna border dengan likert kamu */
+.dot.red { border-color: #b05757; }
+.dot.orange { border-color: #d5975b; }
+.dot.neutral { border-color: #cfcfcf; }
+.dot.lightgreen { border-color: #7ec275; }
+.dot.green { border-color: #4caf50; }
+
+.likert-legend p {
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.2;
+    color: #444;
+    font-weight: 500;
+}
+
+.likert-card {
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding-bottom: 26px;
+}
+
+/* Center the question */
+.likert-question {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* --- Likert Line --- */
+.likert-scale {
+    display: flex;
+    justify-content: center;
+    gap: 55px;
+}
+
+/* --- Base circle --- */
+.likert-scale span {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 4px solid var(--c);
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease;
+}
+
+/* --- Colored borders for each level --- */
+.likert-scale span:nth-child(1) { --c: #b05757; }
+.likert-scale span:nth-child(2) { --c: #d5975b; }
+.likert-scale span:nth-child(3) { --c: #cfcfcf; }
+.likert-scale span:nth-child(4) { --c: #7ec275; }
+.likert-scale span:nth-child(5) { --c: #4caf50; }
+
+/* Hover = sedikit fill warna */
+.likert-scale span:hover {
+    transform: scale(1.15);
+    opacity: 0.85;
+}
+
+/* Selected state */
+.likert-scale span.selected {
+    background: var(--c);
+    border-color: var(--c);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.likert-scale span.selected::after {
+    content: "✔";
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}
+
+/* ---------------------------------------------------
+   BUTTONS
+--------------------------------------------------- */
+.next-btn {
+    padding: 12px 25px;
+    border: none;
+    background: #aaccff;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 750px;
+    margin-top: 20px;
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.12),
+        0 6px 12px rgba(0, 0, 0, 0.08);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.next-btn:hover {
+    background: #92b9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(123, 167, 255, 0.25);
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.12),
+        0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.next-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+    background: #7ca8f7;
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.12),
+        0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------------------------
+   RESULT PAGE
+--------------------------------------------------- */
+
+/* ============================
+   CONTAINER
+============================ */
+.result-container {
+    width: 760px;
+    margin: 30px auto;
+    padding: 40px 50px;
+    background:
+        radial-gradient(circle at top right, rgba(90,140,255,0.25), transparent 60%),
+        radial-gradient(circle at 30% 80%, rgba(90,140,255,0.25), transparent 60%),
+        #ffffff; /* base white */
+    border-radius: 22px;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.08);
+}
+
+/* ============================
+   TITLE & HEADER TEXT
+============================ */
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.emoji-icon {
+    width: 110px;
+    display: block;
+    margin: 0 auto 25px auto;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    margin: 10px 0px 8px 0;
+    margin-top: 40px;
+}
+
+.description {
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+    width: 100%;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* ============================
+   WARNING BOX
+============================ */
+.warning-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: #D2D8E6;
+    border-radius: 8px;
+    margin-bottom: 30px;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+    line-height: 1.4;
+}
+
+.notice-icon {
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+}
+/* ============================
+   2-COLUMN LAYOUT
+============================ */
+.section-wrapper {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+/* Left & Right panels */
+.status-panel,
+.activity-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================
+STATUS PANEL CLEAN UP
+============================ */
+
+.status-panel h3 {
+text-align: center;
+margin-bottom: 35px;
+text-decoration: underline;
+width: 100%;
+}
+
+
+.status-item p {
+margin: 0 0 6px 0;
+width: 100%;
+font-weight: 500;
+}
+
+/* ============================
+STATUS BARS
+============================ */
+
+.bar {
+    width: 100%;      /* INI YANG PENTING */
+    height: 25px;
+    background: #dedede;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+
+.bar span {
+display: block;
+height: 100%;
+background: #5c6976;
+border-radius: 6px;
+width: 0%;
+transition: width .4s ease;
+}
+
+/* ============================
+   QUOTE
+============================ */
+.footer-quote {
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0;
+    font-size: 16px;
+    color: #555;
+    line-height: 2.5;
+}
+
+/* ============================
+   ACTIVITY CARDS (NEW CLEAN VERSION)
+============================ */
+
+.activity-panel h3 {
+text-align: center;
+margin-bottom: 35px;
+text-decoration: underline;
+width: 100%;
+}
+
+/* Wrap grid only, not the whole panel */
+.activity-panel {
+    width: 100%;
+}
+
+/* Grid 2 kolom */
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    align-items: stre;
+}
+
+/* Kotak */
+.activity-card {
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #242424;
+    text-align: center;
+    background: #f6f8ff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+    margin: 0 auto; /* biar tengah */
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.activity-card:hover {
+    transform: translateY(-3px);
+}
+
+.activity-icon {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 12px auto;
+    display: block;
+}
+
+.activity-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.activity-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.3;
+}
+
+/* ============================
+   BUTTONS
+============================ */
+/* Wrapper button */
+.button-group {
+display: flex;
+justify-content: center;
+gap: 14px;
+margin-top: 20px;
+}
+
+
+.btn,
+.link-btn,
+.download-btn {
+text-decoration: none;
+padding: 10px 18px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-size: 14px;
+color: #fff;
+transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+transform-origin: center;
+}
+
+
+/* Hover */
+.btn:hover,
+.link-btn:hover,
+.download-btn:hover {
+transform: translateY(-2px) scale(1.03);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Active */
+.btn:active,
+.link-btn:active,
+.download-btn:active {
+transform: scale(0.96);
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Primary */
+.btn {
+background: #576c83;
+}
+.btn:hover {
+background: #677c97;
+}
+.btn:active {
+background: #4d5f73;
+}
+
+
+/* Link Button */
+.link-btn {
+background: #576c83;
+}
+.link-btn:hover {
+background: #677c97;
+}
+.link-btn:active {
+background: #4d5f73;
+}
+
+
+/* Download */
+.download-btn {
+background: #576c83;
+}
+.download-btn:hover {
+background: #677c97;
+}
+.download-btn:active {
+background: #4d5f73;
+}
+
+/* =========================================================
+   DOWNLOAD PDF BUTTON
+========================================================= */
+@media print {
+
+    /* Hide everything except result box */
+    body > *:not(.result-container) {
+        display: none !important;
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* ---- FIX UTAMA ---- */
+    .result-container {
+        background:
+        radial-gradient(circle at top right, rgba(90,140,255,0.25), transparent 60%),
+        radial-gradient(circle at 30% 80%, rgba(90,140,255,0.25), transparent 60%),
+        #ffffff; /* base white */
+        box-shadow: none !important;
+        
+        /* hilangkan auto-centering yang bikin kegeser */
+        margin: 0 !important;
+
+        /* Biar ukuran PDF mengikuti ukuran kotaknya */
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+
+        /* NO SCALE (biar tidak zoom in/out) */
+        transform: none !important;
+
+        /* force exact size */
+        width: 760px !important;
+        padding: 40px 50px !important;
+    }
+
+    /* Ukuran halaman mengikuti elemen */
+    @page {
+        size: 860px auto;   /* 760 + 40 + 50 = 850 → kasih buffer 10px */
+        margin: 0;
+    }
+}

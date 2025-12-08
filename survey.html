@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Treats Survey</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile-box">
+            <img src="icon/user.png" class="profile-pic">
+            <h2>Hi, Aleph !</h2>
+        </div>
+
+        <h2>Treats Survey</h2>
+        <p>Through a few quick questions, this survey will help you reflect on how you’ve been feeling lately and suggest coping or healing activities that suit you best.</p>
+        
+        <div class="steps">
+            <div class="step active">
+                <img class="dot-icon" src="icon/doing.png">
+
+                <div class="step-text">
+                    <div class="step-title">Basic Information</div>
+                    <div class="step-desc">Some basic information we need to get to know you.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Emotional Awarness</div>
+                    <div class="step-desc">Reflect on how well you understand and express your emotions.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Stress & Coping Response</div>
+                    <div class="step-desc">Explore how you usually react and cope when feeling stressed.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Social Connection & Support</div>
+                    <div class="step-desc">See how connected and supported you feel by people around you.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Self-Care & Routine</div>
+                    <div class="step-desc">Discover how your daily habits help you rest, recharge, and stay balanced.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Hope & Motivation</div>
+                    <div class="step-desc">Reflect on what keeps you moving forward and feeling hopeful.</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        
+        <h1>What's your gender?</h1>
+
+        <div class="option-grid">
+
+            <div class="select-box" data-key="gender" data-value="female">
+                <img src="icon/female.png" class="opt-icon">
+                <span>Female</span>
+            </div>
+
+            <div class="select-box" data-key="gender" data-value="male">
+                <img src="icon/male.png" class="opt-icon">
+                <span>Male</span>
+            </div>
+
+            <div class="select-box" data-key="gender" data-value="other">
+                <img src="icon/other.png" class="opt-icon">
+                <span>Other</span>
+            </div>
+
+        </div>
+
+
+        <h1>What is your age?</h1>
+
+        <div class="option-grid">
+            <div class="select-box" data-key="age" data-value="13-17"><span>13 - 17</span></div>
+            <div class="select-box" data-key="age" data-value="18-24"><span>18 - 24</span></div>
+            <div class="select-box" data-key="age" data-value="25-34"><span>25 - 34</span></div>
+            <div class="select-box" data-key="age" data-value="35-49"><span>35 - 49</span></div>
+            <div class="select-box" data-key="age" data-value="50-59"><span>50 - 59</span></div>
+            <div class="select-box" data-key="age" data-value="60+"><span>60+</span></div>
+        </div>
+
+        <button class="next-btn" onclick="goToSurvey2()"><b>Next →</b></button>
+    </main>
+
+</div>
+
+<script src="survey.js"></script>
+</body>
+</html>

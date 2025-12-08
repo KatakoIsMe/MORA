@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Treats Survey 2</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile-box">
+            <img src="icon/user.png" class="profile-pic">
+            <h2>Hi, Aleph !</h2>
+        </div>
+
+        <h2>Treats Survey</h2>
+        <p>Through a few quick questions, this survey will help you reflect on how you’ve been feeling lately and suggest coping or healing activities that suit you best.</p>
+        
+        <div class="steps">
+            <div class="step active">
+                <img class="dot-icon" src="icon/done.png">
+
+                <div class="step-text">
+                    <div class="step-title">Basic Information</div>
+                    <div class="step-desc">Some basic information we need to get to know you.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/doing.png">
+                <div class="step-text">
+                    <div class="step-title">Emotional Awarness</div>
+                    <div class="step-desc">Reflect on how well you understand and express your emotions.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Stress & Coping Response</div>
+                    <div class="step-desc">Explore how you usually react and cope when feeling stressed.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Social Connection & Support</div>
+                    <div class="step-desc">See how connected and supported you feel by people around you.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Self-Care & Routine</div>
+                    <div class="step-desc">Discover how your daily habits help you rest, recharge, and stay balanced.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <img class="dot-icon" src="icon/undone.png">
+                <div class="step-text">
+                    <div class="step-title">Hope & Motivation</div>
+                    <div class="step-desc">Reflect on what keeps you moving forward and feeling hopeful.</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="content">
+
+        <h1 class="main-header">Choose how accurately each statement reflects you.</h1>
+
+        <div class="likert-legend">
+            <div><span class="dot red"></span><p>Strongly<br>Disagree</p></div>
+            <div><span class="dot orange"></span><p>Disagree</p></div>
+            <div><span class="dot neutral"></span><p>Neutral</p></div>
+            <div><span class="dot lightgreen"></span><p>Agree</p></div>
+            <div><span class="dot green"></span><p>Strongly<br>Agree</p></div>
+        </div>
+
+        <div class="likert-card">
+            <p class="likert-question">
+                I can recognize what I’m feeling without needing much time
+            </p>
+
+            <div class="likert-scale">
+                <span data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+                <span data-value="4"></span>
+                <span data-value="5"></span>
+            </div>
+        </div>
+
+        <div class="likert-card">
+            <p class="likert-question">
+                I often have trouble distinguishing between feeling stressed, sad, or anxious
+            </p>
+
+            <div class="likert-scale">
+                <span data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+                <span data-value="4"></span>
+                <span data-value="5"></span>
+            </div>
+        </div>
+
+        <div class="likert-card">
+            <p class="likert-question">
+                I am able to clearly express my emotions to others
+            </p>
+
+            <div class="likert-scale">
+                <span data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+                <span data-value="4"></span>
+                <span data-value="5"></span>
+            </div>
+        </div>
+
+        <div class="likert-card">
+            <p class="likert-question">
+                I tend to suppress or ignore uncomfortable emotions
+            </p>
+
+            <div class="likert-scale">
+                <span data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+                <span data-value="4"></span>
+                <span data-value="5"></span>
+            </div>
+        </div>
+
+        <div class="likert-card">
+            <p class="likert-question">
+                I am aware of the things that usually trigger changes in my mood
+            </p>
+
+            <div class="likert-scale">
+                <span data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+                <span data-value="4"></span>
+                <span data-value="5"></span>
+            </div>
+        </div>
+
+        <div class="likert-card">
+            <p class="likert-question">
+                I can calm myself down when I feel emotionally overwhelmed
+            </p>
+
+            <div class="likert-scale">
+                <span data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+                <span data-value="4"></span>
+                <span data-value="5"></span>
+            </div>
+        </div>
+
+        <div class="likert-card">
+            <p class="likert-question">
+                I feel comfortable being honest with myself about what I’m feeling
+            </p>
+
+            <div class="likert-scale">
+                <span data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+                <span data-value="4"></span>
+                <span data-value="5"></span>
+            </div>
+        </div>
+
+        <button class="next-btn" onclick="finishSurvey()"><strong>Next →</strong></button>
+    </main>
+</div>
+
+<script src="survey.js"></script>
+</body>
+</html>

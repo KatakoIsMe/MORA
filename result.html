@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Result</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+<div class="result-container">
+
+    <!-- Header -->
+    <h1 class="title">Your Personalized Mental Wellness Summary is Here !</h1>
+
+    <!-- Cute icon -->
+    <img src="icon/result-emotion.png" class="emoji-icon" alt="result emoji">
+
+    <h2 class="subtitle">You may be experiencing signs of mild depressive symptoms.</h2>
+    <p class="description">
+    Your responses indicate that your mood has been lower than usual lately, 
+    likely because emotional pressure and fatigue have been building up over time. 
+    You may notice dips in motivation or feel a bit less connected than you normally would, and that’s completely valid. 
+    These feelings can happen when life weighs on you gradually — and recognizing them like this is already an 
+    important step toward understanding and caring for yourself.
+    </p>
+
+    <!-- Warning box -->
+    <div class="warning-box">
+        <img src="icon/notice.png" class="notice-icon" alt="notice alert">
+        This result is only a preliminary assessment and should not be taken as a medical diagnosis.
+        Please consult a licensed mental health professional for a more accurate evaluation.
+    </div>
+
+    <!-- Sections -->
+    <div class="section-wrapper">
+
+        <!-- Status Panel (kiri) -->
+        <div class="status-panel">
+            <h3>Status Indicators</h3>
+
+            <div class="status-item">
+                <p>Stress Load</p>
+                <div class="bar"><span style="width: 85%;"></span></div>
+            </div>
+
+            <div class="status-item">
+                <p>Emotional Balance</p>
+                <div class="bar"><span style="width: 70%;"></span></div>
+            </div>
+
+            <div class="status-item">
+                <p>Energy & Motivation</p>
+                <div class="bar"><span style="width: 45%;"></span></div>
+            </div>
+
+            <div class="status-item">
+                <p>Coping Strength</p>
+                <div class="bar"><span style="width: 45%;"></span></div>
+            </div>
+
+            <!-- Quote now inside left section -->
+            <p class="footer-quote">
+                You don’t have to feel “100%” to keep going.<br>
+                Small steps, taken gently, can still move you forward.
+                Be kind to yourself — you deserve it 🤍
+            </p>
+        </div>
+
+        <!-- Activities (kanan) -->
+        <div class="activity-panel">
+            <h3>Recommended Activities</h3>
+
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <img src="icon/breathing.png" class="activity-icon" alt="">
+                    <h4>5-minute Breathing</h4>
+                    <p>Short breathing exercise designed to lower stress and refocus your thoughts.</p>
+                </div>
+
+                <div class="activity-card">
+                    <img src="icon/soundscape.png" class="activity-icon" alt="">
+                    <h4>Calming Soundscape</h4>
+                    <p>Listen to a soothing ambient sound to help ease mental pressure.</p>
+                </div>
+
+                <div class="activity-card">
+                    <img src="icon/move.png" class="activity-icon" alt="">
+                    <h4>Light Daily Movement</h4>
+                    <p>Gentle stretching or a short walk can help regulate mood and refresh your mental space.</p>
+                </div>
+
+                <div class="activity-card">
+                    <img src="icon/checkin.png" class="activity-icon" alt="">
+                    <h4>Small Emotional Check-ins</h4>
+                    <p>Spend 3–5 minutes journaling or noticing how you feel and reduces internal pressure.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Button group -->
+    <div class="button-group">
+        <button class="btn retake-btn" id="retakeButton">Retake Quiz</button>
+        <button id="downloadPDF" class="btn download-btn" onclick="window.print()">Download Result</button>
+        <a href="homepage.html" class="btn link-btn">Back to Home</a>
+    </div>
+
+</div>
+
+<script src="survey.js"></script>
+</body>
+</html>
