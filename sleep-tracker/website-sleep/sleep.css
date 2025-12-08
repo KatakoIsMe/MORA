@@ -1,0 +1,791 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #CBE4FF;
+  margin: 0;
+  padding: 20px; /* Tambah padding agar tidak menempel pinggir */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Ubah dari center ke flex-start */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.sapa {
+    font-size: 15px;
+    flex: 1;
+}
+
+.toggle {
+  width: 60px;
+  height: 30px;
+  background: #334155;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle.active {
+  background: #3b82f6;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ini yang penting! */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.track1 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.label-btn{
+    padding: 4px;
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: 650;
+}
+
+.toggle-ball {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle.active .toggle-ball {
+  transform: translateX(30px);
+}
+
+.top-content {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.bars {
+  flex: 1;
+  background: #f3fbff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sub{
+    text-align: center;
+    margin-top: 0;
+}
+
+.dashboard {
+   width: 800px; /* Lebar tetap */
+  max-width: 800px;
+  padding: 25px;
+  border-radius: 20px;
+  /* background-color: #eaf6ff; */
+  margin: 20px auto; /* Pusatkan di tengah */
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+/* .header h1 {
+  font-size: 20px;
+  margin: 0;
+} */
+
+.sleep-circle {
+  background-color: white;
+  display: flex;
+  flex-direction: column; /* Ubah ke column */
+  align-items: center;
+  padding: 20px;
+  border-radius: 30px;
+  flex: 1;
+  gap: 20px; /* Tambah jarak antar elemen */
+}
+
+.circle-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 15px;
+}
+
+.circle-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.circle-center-text .hours {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0;
+}
+
+.circle-center-text .subtext {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+}
+
+
+.sleep-info{
+    font-size:12px;
+    color:#777;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.sleep-score {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #eef4ff;
+  padding: 15px;
+  border-radius: 16px;
+}
+
+.heart-box-card {
+    margin-top:10px;
+    background-color: #ffffff;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 30px;
+}
+
+.sleep-score img {
+  width: 50px;
+  margin-right: 15px;
+}
+
+.sleep-score h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+/* Perbaikan container
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+} */
+
+.sleep-circle-container {
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 30px;
+  flex: 1.5; 
+  width: auto;
+}
+
+.card-small-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0.7; /* Kurangi lebar sedikit agar seimbang */
+  min-width: 160px;
+}
+
+/* Lingkaran dan bars dalam satu baris */
+.circle-with-bars {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Jarak lebih besar antara lingkaran dan bars */
+}
+
+/* Container untuk lingkaran dan bars bersebelahan */
+.sleep-circle-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+  flex: 1;
+}
+
+/* Lingkaran dan bars dalam satu baris */
+.circle-with-bars {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.circle-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.circle-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.circle-center-text .hours {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.circle-center-text .subtext {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+
+/* Bars di sebelah kanan lingkaran */
+.bars-side {
+  flex: 1;
+  background: #f3fbff;
+  padding: 25px;
+  border-radius: 18px;
+  min-width: 250px;
+}
+
+.bar-container {
+  flex: 1;
+  min-width: 180px;
+}
+
+/* Container untuk top content */
+.top-content {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.sleep-card {
+  display: flex;
+  background: #f4f7ff;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.percent {
+  font-size: 44px;
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.sleep-moot {
+  width: 180px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.sleep-card img {
+  width: 40px;
+  margin-right: 15px;
+}
+
+.sleep-card h3 {
+  margin: 0 0 5px;
+  font-size: 15px;
+}
+
+.sleep-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.sleep-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.sleep-row img {
+  width: 40px;
+}
+
+.sleep-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.bar-bg {
+  width: 200px; /* Lebarkan bar */
+  height: 14px; /* Tinggikan sedikit */
+  background: #e7e7e7;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+.bar-fill {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.bar-deep { background: #3b82f6; width: 60%; }
+.bar-restless { background: #93b5f7; width: 35%; }
+.bar-awake { background: #f4d26a; width: 40%; }
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 998;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* SIDEBAR FULL */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -520px;
+  width: 380px;
+  height: 100vh;
+  background: #9cc7ff;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.12);
+  border-radius: 20px 0 0 20px;
+  transition: right .4s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar-img {
+  width: 350px;
+  border-radius: 20px;
+  align-self: center;
+}
+
+.time-box {
+  display: flex;
+  justify-content: space-between;
+  /* background: white; */
+  padding: 12px 18px;
+  margin-top: 0px;
+  font-weight: 600;
+}
+
+.noise-section p,
+.repeat-section p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.days {
+  display: flex;
+  overflow-x: auto; /* Scroll horizontal */
+  white-space: nowrap; /* Biar tidak wrap ke bawah */
+  gap: 8px; /* Jarak antar item */
+  padding-bottom: 10px; /* Space untuk scrollbar */
+  margin-top: 8px;
+  scrollbar-width: thin; /* Untuk Firefox */
+  scrollbar-color: rgba(59, 130, 246, 0.5) transparent;
+}
+
+
+.days span {
+  display: inline-block;
+  padding: 10px 14px; /* Sedikit lebih besar */
+  background: white;
+  margin-right: 8px;
+  margin-bottom: 8px; /* Tambah margin bawah untuk spacing */
+  border-radius: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent; /* Tambah border transparan untuk animasi */
+  color: #475569; /* Warna teks default */
+}
+
+/* Efek Hover */
+.days span:hover {
+  background: #e0f2fe; /* Warna biru muda saat hover */
+  color: #0369a1; /* Warna teks lebih gelap */
+  border-color: #bae6fd; /* Border biru muda */
+  transform: translateY(-2px); /* Efek naik sedikit */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* State Aktif (hari yang dipilih) */
+.days span.active {
+  background: #3b82f6; /* Warna biru */
+  color: white;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Efek saat diklik */
+.days span:active {
+  transform: translateY(0); /* Kembali ke posisi awal */
+  transition: transform 0.1s ease;
+}
+
+.connect-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.hamburger {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #334155;
+  color: white;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger:hover {
+  background: #475569;
+}
+
+.hamburger.active {
+  background: #3b82f6;
+}
+
+/* Timeline untuk heart rate */
+.heart-timeline {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+}
+
+/* Garis horizontal di belakang titik-titik */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e6e6e6;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timeline-point {
+  position: relative;
+  padding: 8px 12px;
+  background: white;
+  border: 2px solid #e6e6e6;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #777;
+  text-align: center;
+  min-width: 70px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timeline-point.active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* Titik di atas garis */
+.timeline-point::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #e6e6e6;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.timeline-point.active::before {
+  background: #3b82f6;
+}
+
+.timebox1{
+  background-color: #c2d7fe;
+  padding: 35px;
+  color: white;
+  font-weight: lighter;
+  border-radius: 20px;
+}
+
+.timebox2{
+  background-color: #fcffee;
+  padding: 35px;
+  border-radius: 20px;
+  font-weight: lighter;
+}
+
+/* Volume Control */
+.volume-control {
+  margin-top: 10px;
+}
+
+.volume-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Custom Range Slider - SATUKAN PROPERTI YANG DUPLIKAT */
+.volume-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background: #e5e7eb; /* Background default */
+  outline: none;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Untuk browser Webkit (Chrome, Safari, Edge) */
+.volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-top: -8px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Untuk Firefox */
+.volume-slider::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.volume-value {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #3b82f6;
+  font-size: 14px;
+}
+
+/* Noise Dropdown */
+.noise-dropdown {
+  position: relative;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.noise-dropdown-btn {
+  width: 100%;
+  padding: 15px 20px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.noise-dropdown-btn:hover {
+  border-color: #93c5fd;
+  background: #f8fafc;
+}
+
+.noise-dropdown-btn:active {
+  transform: translateY(1px);
+}
+
+.selected-noise {
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  color: #64748b;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+/* Dropdown Content (hidden by default) */
+.noise-dropdown-content {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 15px;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: none; /* Hidden by default */
+  overflow: hidden;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Show dropdown when active */
+.noise-dropdown.active .noise-dropdown-content {
+  display: block;
+}
+
+.noise-dropdown.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Noise Options */
+.noise-option {
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.noise-option:last-child {
+  border-bottom: none;
+}
+
+.noise-option:hover {
+  background: #f1f5f9;
+  color: #3b82f6;
+}
+
+.noise-option.active {
+  background: #eff6ff;
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Volume Control (untuk opsi lain) */
+.volume-control {
+  margin-top: 15px;
+  display: none; /* Sembunyikan dulu, bisa ditampilkan jika needed */
+}
+
+/* Jika ingin dropdown dengan icon */
+.noise-option.with-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.noise-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+}

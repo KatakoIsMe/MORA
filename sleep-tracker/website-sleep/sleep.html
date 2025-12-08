@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Dashboard</title>
+  <link rel="stylesheet" href="sleep.css" />
+  <script src="/sleep-tracker/website-sleep/sleep.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- DASHBOARD UTAMA -->
+    <div class="dashboard">
+      <!-- HEADER DALAM DASHBOARD -->
+      <div class="header">
+        <div class="sapa">
+          <h1>Evening, Mr. Aleph</h1>
+          <p>It's... Saturday, 28 October 2025</p>
+        </div>
+
+        <div class="track1">
+          <span class="label-btn">Show Settings</span>
+          <div class="hamburger" id="hamburger-btn">
+            ☰
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP CONTENT -->
+      <div class="top-content">
+        <!-- SLEEP CIRCLE CONTAINER (Lingkaran + Bars) -->
+        <div class="sleep-circle-container">
+          <div class="circle-with-bars">
+            <!-- Lingkaran yang lebih besar -->
+            <div class="circle-wrapper">
+              <svg width="200" height="200">
+                <circle cx="100" cy="100" r="85" stroke="#d9ecff" stroke-width="14" fill="none" />
+                <circle cx="100" cy="100" r="85"
+                  stroke="url(#grad)" stroke-width="14" fill="none"
+                  stroke-linecap="round" stroke-dasharray="534" stroke-dashoffset="200"
+                  transform="rotate(-90 100 100)" />
+                
+                <defs>
+                  <linearGradient id="grad" x1="0%" x2="100%">
+                    <stop offset="0%" stop-color="#2563eb" />
+                    <stop offset="100%" stop-color="#60a5fa" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              
+              <!-- Teks di tengah lingkaran yang lebih besar -->
+              <div class="circle-center-text">
+                <p class="hours">05hr</p>
+                <p class="subtext">5 of 8 hours</p>
+              </div>
+            </div>
+            
+            <!-- BARS yang lebih lebar -->
+            <div class="bars-side">
+              <div class="sleep-row">
+                <img src="/sleep-tracker/icon-sleep/moon.png" alt="Deep Sleep">
+                <div class="bar-container">
+                  <div class="sleep-label">Deep Sleep</div>
+                  <div class="bar-bg">
+                    <div class="bar-fill bar-deep"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sleep-row">
+                <img src="/sleep-tracker/icon-sleep/zzz.png" alt="Restless Sleep">
+                <div class="bar-container">
+                  <div class="sleep-label">Restless Sleep</div>
+                  <div class="bar-bg">
+                    <div class="bar-fill bar-restless"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sleep-row">
+                <img src="/sleep-tracker/icon-sleep/sun.png" alt="Awake">
+                <div class="bar-container">
+                  <div class="sleep-label">Awake</div>
+                  <div class="bar-bg">
+                    <div class="bar-fill bar-awake"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT SMALL CARD -->
+        <div class="card-small-card">
+          <img src="/sleep-tracker/icon-sleep/moon2.png" class="sleep-moot" alt="Sleep Moon" />
+          <div class="percent">62.5%</div>
+          <p class="sub">...of your sleep well rested!</p>
+        </div>
+      </div>
+
+      <!-- HEART RATE -->
+      <!-- HEART RATE -->
+<div class="heart-box-card">
+  <h3>Sleep Heart Rate</h3>
+  <svg viewBox="0 0 800 140" width="100%" height="100">
+    <rect x="0" y="0" width="100%" height="100%" fill="none" stroke="#e6f0fb" />
+    <path
+      d="M0 80 C 60 20, 120 120, 180 80 S 300 60, 360 80 
+         S 420 100, 480 80 S 540 40, 600 80 
+         S 660 30, 720 80 S 780 80, 840 80"
+      fill="none" stroke="red" stroke-width="3" />
+  </svg>
+  
+  <!-- TIMELINE HORIZONTAL -->
+  <div class="heart-timeline">
+    <div class="timeline-container">
+      <div class="timeline-point active">22:00 PM</div>
+      <div class="timeline-point">23:00 PM</div>
+      <div class="timeline-point">00:00 AM</div>
+      <div class="timeline-point">01:00 AM</div>
+      <div class="timeline-point">02:00 AM</div>
+    </div>
+  </div>
+</div>
+    
+    <!-- OVERLAY GELAP -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- SIDEBAR TRACKING -->
+    <div id="sidebar" class="sidebar">
+      <div class="sidebar-content">
+        <div class="track">
+          <span class="label-btn">Set Tracking</span>
+          <div class="toggle" onclick="this.classList.toggle('active')">
+            <div class="toggle-ball"></div>
+          </div>
+        </div>
+        
+        <img src="/sleep-tracker/icon-sleep/eepy girl.png" class="sidebar-img" alt="Sleepy Girl">
+        
+        <div class="time-box">
+          <span class="timebox1">22:00 PM</span>
+          <span class="timebox2">05:00 AM</span>
+        </div>
+
+<!-- Noise Sound dengan dropdown -->
+<div class="noise-section">
+  <p>Noise Sound</p>
+  <div class="noise-toggle">
+    <div class="noise-dropdown">
+      <button class="noise-dropdown-btn" id="noise-dropdown-btn">
+        <span class="selected-noise" id="selected-noise">Moonlight</span>
+        <span class="dropdown-arrow">▼</span>
+      </button>
+      
+      <div class="noise-dropdown-content" id="noise-dropdown-content">
+        <div class="noise-option" data-value="moonlight">Moonlight</div>
+        <div class="noise-option" data-value="forest">Forest</div>
+        <div class="noise-option" data-value="mountain">Mountain</div>
+        <div class="noise-option" data-value="sea">Sea</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="repeat-section">
+  <p>Repeat</p>
+  <div class="days-container">
+    <div class="days">
+      <span>Mon</span>
+      <span>Tue</span>
+      <span>Wed</span>
+      <span>Thu</span>
+      <span>Fri</span>
+      <span>Sat</span>
+      <span>Sun</span>
+    </div>
+  </div>
+</div>
+
+        <button class="connect-btn">Connect to Phone</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
